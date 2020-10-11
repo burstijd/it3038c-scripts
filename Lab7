@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+x = [1,2,3,4]
+y = [1,2,3,4]
+plt.plot(x,y)
+plt.show()
+
+plt.bar([1,2,3],[5,2,1])
+plt.xlabel("This is x-axis label")
+plt.ylabel("This is y-axis label")
+plt.title("Simple Bar Chart")
+plt.show()
+
+percentage = [60,30,10]
+language= ["Python","Java","C++"]
+plt.pie(percentage,labels=language)
+plt.title("Simple Pie Chart")
+plt.show()
