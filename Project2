@@ -1,0 +1,48 @@
+import random
+
+guessesTaken = 0
+
+answer = input("Want to play a game? (Y/N)")
+
+answer = answer.upper()
+if (answer == "Y"):
+    print("Great!")
+        
+else:
+    print("Well okay.")
+    raise SystemExit
+
+print("What's your name?")
+myName = input()
+
+number = random.randint(1,1000)
+print("Well, " + myName + " , I am thinking of a number between 1 and 1000.")
+
+while guessesTaken < 10:
+    print("Take a guess.")
+    guess = input()
+    guess = int(guess)
+    
+    guessesTaken = guessesTaken + 1
+    
+    if guess < number:
+        print("You're too low.")
+        
+    if guess > number:
+        print("You're too high.")
+        
+    if guess == number:
+        break
+        
+if guess != number:
+        number = str(number)
+        print("Sorry, the number I was thinking of was " + number +", better luck next time!")  
+
+if guess == number:
+        guessesTaken = str(guessesTaken)
+        
+        if int(guessesTaken) <= 10:
+            print("Good job, " + myName + "! You guessed my number in " + guessesTaken + " guesses! Either you know the secret or you got lucky.")
+        
+        if int(guessesTaken) > 10:
+            print("Hey, " + myName + "! You guessed my number in " + guessesTaken + " guesses, but it shouldn't take you more than 10.")
